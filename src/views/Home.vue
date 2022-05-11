@@ -1,13 +1,6 @@
 <template>
   <v-container>
 
-    <div class="d-flex justify-center align-center">
-    <input type="search" v-model="search" placeholder="Поиск" class="text-center search white--text" width="100px"
-           @keyup.enter="searchThis"
-    >
-      <v-btn @click.prevent="searchThis" outlined color="white">Искать</v-btn>
-    </div>
-
     <v-hover v-slot="{ hover }" v-for="q in quotes" :key="q.id" open-delay="50" class="myCard">
       <v-card class="ma-5 mx-auto rounded-bl-0" width="60%" :elevation="hover ? 3 :10" color="#444446"
               style="border-radius: 20px">
@@ -60,16 +53,6 @@ export default {
   computed: {
     quotes() {
       return this.$store.getters.list.data;
-    },
-    searchedQuotes() {
-      return this.$store.getters.searchedQuotes;
-    }
-  },
-  methods: {
-    searchThis() {
-      if (this.search) {
-        this.$router.push({name: 'Search', params: {search: this.search}})
-      }
     }
   },
   mounted() {

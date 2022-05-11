@@ -16,14 +16,6 @@ export const QuoteById = (id) => {
     return ax.get('quotes/' + id)
 }
 
-export const searchQuotes = (query) => {
-    return ax.get('quotes/search', {
-        params: {
-            query
-        }
-    })
-}
-
 export const createOrUpdateQuotes = (data) => {
     return ax.post('quotes', data)
 }
