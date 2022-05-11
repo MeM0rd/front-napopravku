@@ -1,6 +1,7 @@
 import axios from "axios";
+
 const ax = axios.create({
-    baseURL: "http://localhost/api"
+    baseURL: "http://185.195.69.130:81/api"
 })
 
 export const getTags = () => {
